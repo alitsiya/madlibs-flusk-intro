@@ -1,0 +1,16 @@
+body {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+h1 {
+    color: red;
+}
+
+form {
+    background-color: #cccccc;
+    padding: 2em;
+}
+label {
+    margin: 1em;
+    display: block;
+}
