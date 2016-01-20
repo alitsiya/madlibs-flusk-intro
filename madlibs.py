@@ -45,13 +45,27 @@ def show_game_form():
     to_play = request.args.get("play-game")
 
     if to_play == "yes":
-        return "Game"
+        return render_template("game.html")
     elif to_play == "no":
         return render_template("goodbye.html")
     else:
         return "We are not sure what %s means?!" % to_play
 
     print to_play
+
+@app.route('/madlib')
+def show_madlib():
+    noun = request.args.get('noun')
+    color = request.args.get('color')
+    name = request.args.get('name')
+    adjective = request.args.get('adj')
+
+    return render_template("madlib.html",
+                            noun = noun,
+                            color = color,
+                            person = name,
+                            adjective = adjective,
+                            )
 
 
 if __name__ == '__main__':
