@@ -59,12 +59,14 @@ def show_madlib():
     color = request.args.get('color')
     name = request.args.get('name')
     adjective = request.args.get('adj')
+    pets = request.args.getlist('pets')
 
     return render_template("madlib.html",
                             noun = noun,
                             color = color,
                             person = name,
                             adjective = adjective,
+                            pets = pets,
                             )
 
 

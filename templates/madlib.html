@@ -8,7 +8,15 @@
 <h1>Your madlib is below!</h1>
 
 <p>
-There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
+There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab
+{% if pets %}
+,with 
+{% for pet in pets %} 
+    {{pet}}, and
+{% endfor %} 
+they where having fun
+{% endif %}
+. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
 </p>
 
 </body>
