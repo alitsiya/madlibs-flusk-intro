@@ -38,11 +38,11 @@ def greet_person():
                            person=player,
                            compliment=compliment)
 
-@app.route('/game')
+@app.route('/game', methods=["POST"])
 def show_game_form():
     """Play madlibs game"""
 
-    to_play = request.args.get("play-game")
+    to_play = request.form.get("play-game")
 
     if to_play == "yes":
         return render_template("game.html")
@@ -62,7 +62,7 @@ def show_madlib():
     adjective = request.args.get('adj')
     pets = request.args.getlist('pets')
     madlib = choice(madlibs)
-    
+
     return render_template( madlib,
                             noun=noun,
                             color=color,
